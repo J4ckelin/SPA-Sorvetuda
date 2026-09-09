@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorvetuda - Sorveteria Gourmet & Kits de Inverno</title>
+
+  <!-- Google Fonts: Outfit for display/headings, Work Sans for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Google Material Symbols Outlined -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="top-bar">
+      <div class="container">
+        <div class="store-meta-item">
+          <span class="icon">schedule</span>
+          <span id="store-hours">Ter–Dom, 12h às 22h</span>
+        </div>
+        <div class="store-meta-item">
+          <span class="icon">location_on</span>
+          <span id="store-address">Rua das Hortelãs, 123 – Vila Madalena, São Paulo/SP</span>
+        </div>
+        <div class="store-meta-item">
+          <span class="icon">chat</span>
+          <a id="store-whatsapp" href="https://wa.me/5511987654321" target="_blank">Atendimento WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="nav-content">
+        <a href="#" class="brand">
+          <div class="brand-icon-wrapper">
+            <span class="icon">icecream</span>
+          </div>
+          <div>
+            <h1 class="brand-title">Sorvetuda</h1>
+            <p class="brand-subtitle">Gelateria Gourmet & Fondue</p>
+          </div>
+        </a>
+
+        <button id="open-cart-btn" class="cart-btn" aria-label="Abrir carrinho de compras">
+          <span class="icon">shopping_bag</span>
+          <span>Carrinho</span>
+          <span id="cart-badge-count" class="cart-count-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="container">
+
+    <!-- Hero Banner Special Winter Kits -->
+    <section class="hero-banner">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span class="icon">ac_unit</span>
+          <span>Especial de Inverno</span>
+        </div>
+        <h2 class="hero-title">Combos de Fondue & Sorvetes Autorais</h2>
+        <p class="hero-description">
+          Aqueça seus dias frios com nossas ganaches de chocolate belga, acompanhadas dos mais exclusivos sorvetes infusionados com ervas, especiarias e flores.
+        </p>
+        <a href="#cardapio" class="btn-hero" onclick="filterCategory('kits-inverno')">
+          <span>Ver Kits de Inverno</span>
+          <span class="icon">arrow_forward</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section id="cardapio" class="filter-section">
+      <div class="section-header">
+        <h2 class="section-title">Nosso Cardápio</h2>
+        <p class="section-subtitle">Escolha entre sabores autorais, kits aconchegantes e acompanhamentos crocantes</p>
+      </div>
+
+      <div class="filter-chips">
+        <button class="chip-btn active" data-category="todos" onclick="filterCategory('todos')">
+          <span class="icon">grid_view</span>
+          <span>Todos</span>
+        </button>
+        <button class="chip-btn" data-category="sabores" onclick="filterCategory('sabores')">
+          <span class="icon">icecream</span>
+          <span>Sabores Autorais</span>
+        </button>
+        <button class="chip-btn" data-category="kits-inverno" onclick="filterCategory('kits-inverno')">
+          <span class="icon">local_fire_department</span>
+          <span>Kits Inverno</span>
+        </button>
+        <button class="chip-btn" data-category="acompanhamentos" onclick="filterCategory('acompanhamentos')">
+          <span class="icon">cookie</span>
+          <span>Acompanhamentos</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Products Catalog Grid -->
+    <section>
+      <div id="products-grid" class="products-grid">
+        <!-- Products will be populated dynamically via JavaScript -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <h4>Sorvetuda</h4>
+          <p>Experiência sensorial em gelato artesanal e confeitos quentes. Ingredientes selecionados e misturas autorais inesquecíveis.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Atendimento</h4>
+          <p><span class="icon">schedule</span> Terça a Domingo: 12h às 22h</p>
+          <p><span class="icon">call</span> (11) 98765-4321</p>
+          <p><span class="icon">pin_drop</span> Vila Madalena, SP</p>
+        </div>
+        <div class="footer-col">
+          <h4>Formas de Entrega</h4>
+          <p>Entregamos em embalagens térmicas de alta performance para garantir a consistência impecável do seu gelato ou fondue.</p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2026 Sorvetuda Gelateria Gourmet. Todos os direitos reservados. Aplicação SPA de demonstração.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Drawer Slide-over Cart Overlay -->
+  <div id="cart-overlay" class="overlay"></div>
+
+  <!-- Drawer Slide-over Cart -->
+  <aside id="cart-drawer" class="cart-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <h3 class="drawer-title">
+        <span class="icon">shopping_bag</span>
+        <span>Seu Carrinho</span>
+      </h3>
+      <button id="close-cart-btn" class="close-btn" aria-label="Fechar carrinho">
+        <span class="icon">close</span>
+      </button>
+    </div>
+
+    <div id="cart-items-container" class="cart-items-container">
+      <!-- Items dynamically injected here -->
+    </div>
+
+    <div class="drawer-footer">
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">R$ 0,00</span>
+      </div>
+      <div class="summary-row">
+        <span>Taxa de Entrega</span>
+        <span id="cart-delivery-fee">R$ 8,00</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total</span>
+        <span id="cart-total">R$ 0,00</span>
+      </div>
+      <button id="proceed-checkout-btn" class="checkout-btn">
+        <span>Finalizar Compra</span>
+        <span class="icon">arrow_forward</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Multi-Step Checkout Modal -->
+  <div id="checkout-modal" class="modal-checkout" aria-hidden="true">
+    <div class="modal-header">
+      <h3 class="drawer-title">
+        <span class="icon">encrypted</span>
+        <span>Checkout Seguro</span>
+      </h3>
+      <button id="close-checkout-btn" class="close-btn" aria-label="Fechar checkout">
+        <span class="icon">close</span>
+      </button>
+    </div>
+
+    <!-- Steps Progress Bar -->
+    <div class="step-indicator">
+      <div id="step-tab-1" class="step-item active">1. Identificação</div>
+      <div id="step-tab-2" class="step-item">2. Localização</div>
+      <div id="step-tab-3" class="step-item">3. Segurança</div>
+      <div id="step-tab-4" class="step-item">4. Pagamento</div>
+    </div>
+
+    <div class="modal-body">
+
+      <!-- STEP 1: Registration Form -->
+      <div id="step-1-content" class="checkout-step active">
+        <p class="section-subtitle" style="margin-bottom: 1.25rem;">Informe seus dados para entrega do pedido.</p>
+        <form id="form-user-data" onsubmit="event.preventDefault();">
+          <div class="form-group">
+            <label class="form-label" for="user-name">Nome Completo *</label>
+            <input type="text" id="user-name" class="form-control" placeholder="Ex: Maria Silva" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="user-phone">WhatsApp *</label>
+              <input type="tel" id="user-phone" class="form-control" placeholder="(11) 99999-9999" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="user-email">E-mail *</label>
+              <input type="email" id="user-email" class="form-control" placeholder="maria@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="user-address">Endereço de Entrega *</label>
+            <input type="text" id="user-address" class="form-control" placeholder="Rua, Número, Bairro, Complemento" required>
+          </div>
+        </form>
+      </div>
+
+      <!-- STEP 2: Geolocation Verification -->
+      <div id="step-2-content" class="checkout-step">
+        <div class="geo-status-card">
+          <span class="icon geo-status-icon">my_location</span>
+          <h4 style="font-family: var(--font-heading); margin-bottom: 8px;">Validação de Localização</h4>
+          <p style="font-size: 14px; color: var(--text-secondary); max-width: 400px; margin: 0 auto;">
+            Para garantir a entrega ágil e no raio de atendimento da Sorvetuda, precisamos validar sua localização via GPS.
+          </p>
+          <div id="geo-status-alert" class="status-alert"></div>
+        </div>
+        <div style="text-align: center; margin-top: 1rem;">
+          <button id="btn-request-geo" class="btn-primary" type="button">
+            <span class="icon">location_searching</span>
+            <span>Permitir Localização</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Web Credentials / Device Security -->
+      <div id="step-3-content" class="checkout-step">
+        <div class="security-notice-box">
+          <span class="icon">shield</span>
+          <div>
+            <h4 style="font-size: 15px; margin-bottom: 4px;">Validação de Credenciais do Dispositivo</h4>
+            <p style="font-size: 13px; color: var(--text-secondary);">
+              Camada extra de segurança contra fraudes antes de liberar o gateway de pagamento.
+            </p>
+          </div>
+        </div>
+        <div id="credentials-status-card" class="geo-status-card">
+          <span class="icon geo-status-icon">fingerprint</span>
+          <h4 style="font-family: var(--font-heading); margin-bottom: 8px;">Autenticação Biométrica / Dispositivo</h4>
+          <p style="font-size: 14px; color: var(--text-secondary); max-width: 400px; margin: 0 auto;">
+            Clique abaixo para autenticar suas credenciais no navegador via API CredentialsContainer.
+          </p>
+          <div id="credentials-status-alert" class="status-alert"></div>
+        </div>
+        <div style="text-align: center; margin-top: 1rem;">
+          <button id="btn-request-credentials" class="btn-primary" type="button">
+            <span class="icon">verified_user</span>
+            <span>Autenticar Dispositivo</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 4: Simulated Payment Gateway -->
+      <div id="step-4-content" class="checkout-step">
+        <h4 style="font-family: var(--font-heading); margin-bottom: 8px;">Simulação do Gateway de Pagamento</h4>
+        <p style="font-size: 14px; color: var(--text-secondary);">Selecione a forma de pagamento desejada para concluir o pedido:</p>
+
+        <div class="payment-methods">
+          <label class="payment-option selected">
+            <input type="radio" name="payment-method" value="pix" checked>
+            <span class="icon" style="color: #00bdae;">qr_code_2</span>
+            <div>
+              <strong>PIX Instantâneo</strong>
+              <div style="font-size: 12px; color: var(--text-secondary);">Aprovação imediata e 5% de desconto no valor final</div>
+            </div>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment-method" value="cartao">
+            <span class="icon" style="color: var(--primary);">credit_card</span>
+            <div>
+              <strong>Cartão de Crédito</strong>
+              <div style="font-size: 12px; color: var(--text-secondary);">Simulação de transação em ambiente criptografado</div>
+            </div>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment-method" value="dinheiro">
+            <span class="icon" style="color: var(--secondary);">payments</span>
+            <div>
+              <strong>Pagamento na Entrega</strong>
+              <div style="font-size: 12px; color: var(--text-secondary);">Dinheiro ou Maquininha no momento da entrega</div>
+            </div>
+          </label>
+        </div>
+
+        <div style="margin-top: 1.5rem; background: var(--surface-bg); padding: 12px 16px; border-radius: var(--radius-md);">
+          <div class="summary-row total" style="margin-top: 0; padding-top: 0; border: none;">
+            <span>Total Final</span>
+            <span id="checkout-final-total">R$ 0,00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 5: Order Confirmation / Success View -->
+      <div id="step-5-content" class="checkout-step">
+        <div class="order-success-card">
+          <div class="success-icon-wrapper">
+            <span class="icon">check_circle</span>
+          </div>
+          <h3 style="font-family: var(--font-heading); font-size: 26px; margin-bottom: 8px; color: var(--primary);">Pedido Confirmado com Sucesso!</h3>
+          <p style="font-size: 15px; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Obrigado por comprar na Sorvetuda. Seu pedido foi enviado para nossa cozinha artesanal e já está em preparação.
+          </p>
+          <div style="background: var(--surface-bg); padding: 1rem; border-radius: var(--radius-md); text-align: left; font-size: 14px; margin-bottom: 1.5rem;">
+            <p style="margin-bottom: 4px;"><strong>Número do Pedido:</strong> <span id="order-id-display">#SVT-0000</span></p>
+            <p style="margin-bottom: 4px;"><strong>Cliente:</strong> <span id="order-client-display">-</span></p>
+            <p style="margin-bottom: 4px;"><strong>Endereço:</strong> <span id="order-address-display">-</span></p>
+            <p style="margin-bottom: 4px;"><strong>Localização Validada:</strong> <span id="order-geo-display">-</span></p>
+          </div>
+          <button id="btn-finish-all" class="btn-primary" type="button" style="width: 100%; justify-content: center;">
+            <span class="icon">storefront</span>
+            <span>Voltar à Loja</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="modal-footer-nav" class="modal-footer">
+      <button id="btn-prev-step" class="btn-secondary" type="button" style="display: none;">
+        <span>Voltar</span>
+      </button>
+      <button id="btn-next-step" class="btn-primary" type="button" style="margin-left: auto;">
+        <span>Avançar</span>
+        <span class="icon">arrow_forward</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

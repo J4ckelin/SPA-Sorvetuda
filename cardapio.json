@@ -1,0 +1,145 @@
+{
+  "config": {
+    "nomeLoja": "Sorvetuda",
+    "whatsapp": "5511987654321",
+    "horario": "Ter–Dom, 12h às 22h",
+    "endereco": "Rua das Hortelãs, 123 – Vila Madalena, São Paulo/SP"
+  },
+  "produtos": [
+    {
+      "id": "svt-001",
+      "nome": "Manjericão com Limão",
+      "descricao": "Creme de manjericão fresco com raspas de limão siciliano. Frescor absoluto.",
+      "preco": 18.90,
+      "categoria": "sabores",
+      "badge": "novo",
+      "imagem": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "svt-002",
+      "nome": "Gengibre com Abóbora",
+      "descricao": "Doce de abóbora assada com toque picante de gengibre cristalizado.",
+      "preco": 19.90,
+      "categoria": "sabores",
+      "badge": null,
+      "imagem": "https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "svt-003",
+      "nome": "Lavanda com Baunilha",
+      "descricao": "Fava de baunilha infusionada com flores de lavanda. Aromático e calmante.",
+      "preco": 21.90,
+      "categoria": "sabores",
+      "badge": null,
+      "imagem": "https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "svt-004",
+      "nome": "Alecrim com Mel",
+      "descricao": "Base de creme com mel silvestre e alecrim tostado no final.",
+      "preco": 18.90,
+      "categoria": "sabores",
+      "badge": null,
+      "imagem": "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "svt-005",
+      "nome": "Pimenta Rosa com Morango",
+      "descricao": "Sorbet de morango orgânico com pimenta-rosa moída na hora.",
+      "preco": 19.90,
+      "categoria": "sabores",
+      "badge": "promocao",
+      "imagem": "https://images.unsplash.com/photo-1488900128323-21503983a07e?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "svt-006",
+      "nome": "Capim-Santo com Coco",
+      "descricao": "Leite de coco batido com capim-santo fresco. Tropical e leve.",
+      "preco": 17.90,
+      "categoria": "sabores",
+      "badge": null,
+      "imagem": "https://images.unsplash.com/photo-1560008511-11c63416e52d?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "svt-007",
+      "nome": "Chocolate 70% com Flor de Sal",
+      "descricao": "Chocolate belga intenso finalizado com flor de sal da costa brasileira.",
+      "preco": 19.90,
+      "categoria": "sabores",
+      "badge": null,
+      "imagem": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "svt-008",
+      "nome": "Café com Cardamomo",
+      "descricao": "Café coado na base do sorvete com cardamomo verde. Intenso.",
+      "preco": 20.90,
+      "categoria": "sabores",
+      "badge": "novo",
+      "imagem": "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "kit-001",
+      "nome": "Kit Inverno Fondue Clássico",
+      "descricao": "Fondue de chocolate 70% + 4 bolas de sorvete a escolha + frutas e marshmallows. Serve 2.",
+      "preco": 89.90,
+      "categoria": "kits-inverno",
+      "badge": "kit-inverno",
+      "imagem": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "kit-002",
+      "nome": "Kit Inverno Fondue Completo",
+      "descricao": "Fondue de chocolate 70% e chocolate branco + 8 bolas + frutas, marshmallows e castanhas + 2 canecas de chocolate quente. Serve 4.",
+      "preco": 149.90,
+      "categoria": "kits-inverno",
+      "badge": "promocao",
+      "imagem": "https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "kit-003",
+      "nome": "Kit Inverno Romântico",
+      "descricao": "Fondue de chocolate + 4 bolas de lavanda com baunilha + morangos e espumante sem álcool. Serve 2.",
+      "preco": 119.90,
+      "categoria": "kits-inverno",
+      "badge": "kit-inverno",
+      "imagem": "https://images.unsplash.com/photo-1516559828984-fb3b99548b21?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "kit-004",
+      "nome": "Kit Inverno Família",
+      "descricao": "Fondue gigante + 12 bolas sortidas + tábua de frutas, bolo de chocolate e marshmallows. Serve 6.",
+      "preco": 199.90,
+      "categoria": "kits-inverno",
+      "badge": null,
+      "imagem": "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "acp-001",
+      "nome": "Casca de Waffle Artesanal",
+      "descricao": "Casca crocante feita na loja, com borda de chocolate.",
+      "preco": 8.90,
+      "categoria": "acompanhamentos",
+      "badge": null,
+      "imagem": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "acp-002",
+      "nome": "Mix de Castanhas Caramelizadas",
+      "descricao": "Castanha-de-caju, nozes e amêndoas com caramelo de flor de sal.",
+      "preco": 12.90,
+      "categoria": "acompanhamentos",
+      "badge": null,
+      "imagem": "https://images.unsplash.com/photo-1536599018102-9f803c140fc1?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": "acp-003",
+      "nome": "Brownie de Chocolate 70%",
+      "descricao": "Brownie úmido, recheado de ganache. Perfeito com fondue.",
+      "preco": 14.90,
+      "categoria": "acompanhamentos",
+      "badge": "promocao",
+      "imagem": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80"
+    }
+  ]
+}

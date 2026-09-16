@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#SEU_HEX_AQUI">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sorvetuda - Sorveteria Gourmet & Kits de Inverno</title>
@@ -348,6 +350,15 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+<script src="app.js"></script>
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(reg => console.log('SW registrado:', reg.scope))
+        .catch(err => console.error('Falha ao registrar SW:', err));
+    });
+  }
+</script>
 </body>
 </html>
